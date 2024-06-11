@@ -3,3 +3,24 @@ name = "rust_grep"
 version = "0.1.0"
 authors = ["Martin Olsen <Martin.Olsen2@protonmail.com>"]
 edition = "2021"
+license = "GPL-3"
+license-file = "LICENSE"
+
+[lib]
+name = "rust_grep"
+path = "src/lib/mod.rs"
+
+[[bin]]
+name = "rust_grep"
+path = "src/main.rs"
+
+
+[profile.release]
+strip = true		# strip debug symbols
+lto = true			# optimize during linking, not compilation
+codegen-units = 1	# Using 1 codegen-unit enables more elaborate optimizations
+panic = "abort"		# Don't include code necessary to stack trace panics
+
+[dependencies]
+clap = { version = "4.5.7", features = ["derive"] }
+unicode-segmentation = "1.11.0"
