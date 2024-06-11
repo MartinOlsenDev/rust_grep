@@ -3,13 +3,13 @@ use std::io::BufReader;
 use std::path::Path;
 
 #[derive(Debug)]
-pub enum Input<'a> {
-    Text(&'a str),
+pub enum Input {
+    Text(String),
     File(BufReader<File>)
 }
 
-impl<'a> From<&'a str> for Input<'a> {
-    fn from(value: &'a str) -> Self {
+impl From<String> for Input {
+    fn from(value: String) -> Self {
         match File::open(Path::new(&value)) {
             Ok(file) => Input::File(BufReader::new(file)),
             Err(_) => Input::Text(value)
