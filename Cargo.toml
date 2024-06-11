@@ -1,0 +1,5 @@
+[package]
+name = "rust_grep"
+version = "0.1.0"
+authors = ["Martin Olsen <Martin.Olsen2@protonmail.com>"]
+edition = "2021"
