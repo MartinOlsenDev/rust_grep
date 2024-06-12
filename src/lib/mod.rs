@@ -1,3 +1,3 @@
 pub mod input;
 pub mod cli;
-pub mod pattern;
+pub mod regex;

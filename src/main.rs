@@ -1,7 +1,7 @@
 use std::io::Read;
 use std::{env, io};
 use rust_grep::input::Input;
-use rust_grep::pattern::RegexList;
+use rust_grep::regex::regex_list::RegexList;
 
 fn main() {
     let regex_input = env::args().nth(1).expect("Requires 2 arguments.");
