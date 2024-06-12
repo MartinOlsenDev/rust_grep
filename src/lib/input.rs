@@ -4,8 +4,8 @@ use std::path::Path;
 
 #[derive(Debug)]
 pub enum Input {
-    Text(String),
-    File(String)
+    Text(String), // use &str, possibly? in order
+    File(String)  // to cut the &str down.
 }
 
 impl TryFrom<String> for Input {
