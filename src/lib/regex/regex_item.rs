@@ -25,6 +25,7 @@ impl Pattern {
     }
 }
 
+// placeholder until "?", "+", and "{n, m}" functionality is added
 #[derive(Debug, PartialEq, Eq)]
 pub enum Modifier {
 
