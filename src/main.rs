@@ -8,7 +8,7 @@ fn main() {
     let regex_input = RegexList::try_from(regex_input.as_str()).expect("Error parsing regex input.");
 
     let text_input: Input = env::args().nth(2)
-        .map(|x| Input::from(x))
+        .map(|x| Input::try_from(x).expect("File contained invalid utf-8."))
         .unwrap_or_else(|| {
             let mut input = String::new();
             io::stdin().read_to_string(&mut input).unwrap();
